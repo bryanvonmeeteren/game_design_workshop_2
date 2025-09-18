@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         jumpDetectionLength = 1;
-        jumpStrength = 500;
+        jumpStrength = 300;
         speed = 10;
     }
 
