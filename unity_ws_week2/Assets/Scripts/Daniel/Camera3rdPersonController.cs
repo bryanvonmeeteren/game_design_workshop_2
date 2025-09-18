@@ -6,7 +6,7 @@ public class Camera3rdPersonController : MonoBehaviour
     public GameObject player;
     void Start()
     {
-        offset = new Vector3(0.0f, 1.81f ,-3f);
+        offset = new Vector3(0.0f, 1.81f, -5f);
     }
 
     void Update()
@@ -15,3 +15,5 @@ public class Camera3rdPersonController : MonoBehaviour
         transform.position = player.transform.position + offset;
     }
 }
+
+
