@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -206,8 +207,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.040794514, y: 0.012581381, z: -0.0005136108, w: -0.9990882}
-  m_LocalPosition: {x: -0.0977304, y: 1.535743, z: -3.2294831}
+  m_LocalRotation: {x: -0.37483674, y: 0.02001638, z: -0.008096224, w: -0.92683935}
+  m_LocalPosition: {x: -0.6745072, y: 6.1405935, z: -5.4931755}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -264,13 +265,64 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68f0e3487ac35a50e9653d7c6d40c45c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  player: {fileID: 1376797435}
-  offset: {x: 0, y: 0, z: 0}
+  clickToMoveCamera: 0
+  canZoom: 1
+  sensitivity: 5
+  cameraLimit: {x: -45, y: 40}
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1bfe72fbc87d04e885296b53e91c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::vThirdPersonCamera
+  target: {fileID: 1376797439}
+  smoothCameraRotation: 12
+  cullingLayer:
+    m_Bits: 1
+  lockCamera: 0
+  rightOffset: 0
+  defaultDistance: 2.5
+  height: 1.4
+  smoothFollow: 10
+  xMouseSensitivity: 3
+  yMouseSensitivity: 3
+  yMinLimit: -40
+  yMaxLimit: 80
+  indexList: 0
+  indexLookPoint: 0
+  offSetPlayerPivot: 0
+  currentStateName: 
+  currentTarget: {fileID: 0}
+  movementSpeed: {x: 0, y: 0}
+  targetLookAt: {fileID: 0}
+  currentTargetPos: {x: 0, y: 0, z: 0}
+  lookPoint: {x: 0, y: 0, z: 0}
+  current_cPos: {x: 0, y: 0, z: 0}
+  desired_cPos: {x: 0, y: 0, z: 0}
+  _camera: {fileID: 0}
+  distance: 5
+  mouseY: 0
+  mouseX: 0
+  currentHeight: 0
+  cullingDistance: 0
+  checkHeightRadius: 0.4
+  clipPlaneMargin: 0
+  forward: -1
+  xMinLimit: -360
+  xMaxLimit: 360
+  cullingHeight: 0.2
+  cullingMinDist: 0.1
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +516,7 @@ GameObject:
   - component: {fileID: 1376797442}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -595,7 +647,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376797435}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -627,13 +679,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1376797435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5748063a8dce631fcb0799320dabaad4, type: 3}
+  m_Script: {fileID: 11500000, guid: 78bfe315ac0ad9b4da8c8e1f992d6ccc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  rb: {fileID: 0}
-  moveX: 0
-  moveY: 0
-  movementSpeed: 2.81
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  clickToMoveCamera: 0
+  canZoom: 1
+  sensitivity: 5
+  cameraLimit: {x: -45, y: 40}
 --- !u!1 &1703366840
 GameObject:
   m_ObjectHideFlags: 0
