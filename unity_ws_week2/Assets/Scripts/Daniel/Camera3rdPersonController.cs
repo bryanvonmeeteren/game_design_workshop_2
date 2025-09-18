@@ -11,6 +11,7 @@ public class Camera3rdPersonController : MonoBehaviour
 
     void Update()
     {
+        //transform.LookAt(player);
         transform.position = player.transform.position + offset;
     }
 }
